@@ -15,15 +15,15 @@ import java.util.Properties;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-    private static final String URL = "jdbc:mysql://localhost:3306/mydbtest";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "NewPass345#";
+    //private static final String URL = "jdbc:mysql://localhost:3306/mydbtest";
+    //private static final String USERNAME = "root";
+    //private static final String PASSWORD = "NewPass345#";
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    /*private static final String URL =
+    private static final String URL =
             "jdbc:mysql://localhost:3306/mydbtest?autoReconnect=true&useSSL=false";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "NewPass345#";*/
+    private static final String PASSWORD = "NewPass345#";
     private static SessionFactory sessionFactory;
 
     public Connection getConnection() {
@@ -49,7 +49,7 @@ public class Util {
                 settings.put(Environment.URL, URL);
                 settings.put(Environment.USER, USERNAME);
                 settings.put(Environment.PASS, PASSWORD);
-                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
+                settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 settings.put(Environment.HBM2DDL_AUTO, "create-drop");
