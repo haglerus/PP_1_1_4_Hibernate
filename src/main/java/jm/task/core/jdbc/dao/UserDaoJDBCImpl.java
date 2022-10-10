@@ -18,8 +18,8 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
                 "(id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
                 "name VARCHAR(50) NOT NULL, lastName VARCHAR(50) NOT NULL, " +
                 "age TINYINT NOT NULL)";
-        try (Statement statement = connection.createStatement()){
-            statement.execute(sql);
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.execute(sql);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
